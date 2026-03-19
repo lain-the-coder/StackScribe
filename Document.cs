@@ -9,9 +9,30 @@ namespace StackScribe
 
         public void Addline(int lineNumber, string text)
         {
-            lines.Insert(lineNumber-1, text);
+            if (lineNumber < 1 || lineNumber > lines.Count + 1)
+            {
+                Console.WriteLine("Invalid line number");
+                return;
+            }
+            else
+            {
+                lines.Insert(lineNumber - 1, text);
+                Console.WriteLine($"Added line {lineNumber}: {text}");
+            }
         }
-
+        public void Removeline(int lineNumber)
+        {
+            if (lineNumber < 1 || lineNumber > lines.Count)
+            {
+                Console.WriteLine("Invalid line number");
+                return;
+            }
+            else
+            {
+                lines.RemoveAt(lineNumber - 1);
+                Console.WriteLine($"Removed line {lineNumber}.");
+            }
+        }
         public void ShowAll()
         {
             if (lines.Count == 0)

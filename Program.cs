@@ -26,7 +26,12 @@ namespace StackScribe
                     int lineNumber = int.Parse(inputList[1]);
                     string text = String.Join(" ", inputList, 2, inputList.Length - 2);
                     document.Addline(lineNumber, text);
-                    Console.WriteLine($"Added line {lineNumber}: {text}");
+                    continue;
+                }
+                if (command == "remove")
+                {
+                    int lineNumber = int.Parse(inputList[1]);
+                    document.Removeline(lineNumber);
                     continue;
                 }
                 if (command == "show")
@@ -56,9 +61,10 @@ namespace StackScribe
         {
             Console.WriteLine("Available commands:");
             Console.WriteLine("1. insert <line number> <text> - Adds a line of text at the specified line number.");
-            Console.WriteLine("2. show - Displays all lines in the document.");
-            Console.WriteLine("3. help - Displays this list of commands.");
-            Console.WriteLine("4. exit - Exits the program.");
+            Console.WriteLine("2. remove <line number> - Removes the line at the specified line number.");
+            Console.WriteLine("3. show - Displays all lines in the document.");
+            Console.WriteLine("4. help - Displays this list of commands.");
+            Console.WriteLine("5. exit - Exits the program.");
         }
     }
 }
