@@ -12,7 +12,7 @@ namespace StackScribe
             while (true)
             {
                 Console.Write("> ");
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("No arguments passed. Please enter a command.");
