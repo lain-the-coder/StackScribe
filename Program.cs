@@ -6,18 +6,12 @@ namespace StackScribe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is my StackScribe application");
-            if (args.Length == 0)
-            {
-                Console.WriteLine("No command line arguments");
-            }
-            else
-            {
-                foreach(var arg in args)
-                {
-                    Console.WriteLine($"Argument: {arg}");
-                }
-            }
+            Document document = new Document();
+            document.ShowAll();
+            document.Addline(1, "Hello World!");
+            document.Addline(2, "This is a test document.");
+            document.Addline(3, "It is a simple document, with a few lines of text.");
+            document.ShowAll();
         }
     }
 }
