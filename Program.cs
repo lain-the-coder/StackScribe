@@ -59,6 +59,7 @@ namespace StackScribe
         }
         static void CommandsList()
         {
+            // List of available commands
             Console.WriteLine("Available commands:");
             Console.WriteLine("1. insert <line number> <text> - Adds a line of text at the specified line number.");
             Console.WriteLine("2. remove <line number> - Removes the line at the specified line number.");
