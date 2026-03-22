@@ -5,6 +5,7 @@ namespace StackScribe
 {
     public class Document
     {
+        // List of lines in the document
         private List<string> lines = new List<string>();
 
         public void Addline(int lineNumber, string text)
