@@ -25,7 +25,8 @@ namespace StackScribe
                 {
                     int lineNumber = int.Parse(inputList[1]);
                     string text = String.Join(" ", inputList, 2, inputList.Length - 2);
-                    document.Addline(lineNumber, text);
+                    var cmd = new InsertCommand(document, lineNumber, text);
+                    cmd.Execute();
                     continue;
                 }
                 if (command == "remove")
