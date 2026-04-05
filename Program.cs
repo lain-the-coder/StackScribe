@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace StackScribe
 {
@@ -7,6 +9,7 @@ namespace StackScribe
         static void Main(string[] args)
         {
             Document document = new Document();
+            Stack<InsertCommand> stack = new Stack<InsertCommand>();
             Console.WriteLine("Welcome to StackScribe!");
             CommandsList();
             while (true)
@@ -27,6 +30,7 @@ namespace StackScribe
                     string text = String.Join(" ", inputList, 2, inputList.Length - 2);
                     var cmd = new InsertCommand(document, lineNumber, text);
                     cmd.Execute();
+                    stack.Push(cmd);
                     continue;
                 }
                 if (command == "remove")
